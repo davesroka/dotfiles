@@ -1,0 +1,174 @@
+
+@import "ui-variables";
+
+@font-face {
+  font-family: 'css-easing';
+  src:url('atom://bezier-curve-editor/resources/css-easing.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes preview {
+  0% {
+    -webkit-transform: translate(0,0);
+  }
+  100% {
+    -webkit-transform: translate(90%,0);
+  }
+}
+
+[class^="easing-"], [class*=" easing-"] {
+  font-family: 'css-easing';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.easing-linear:before {
+  content: "\e600";
+}
+.easing-ease:before {
+  content: "\e601";
+}
+.easing-ease-out:before {
+  content: "\e602";
+}
+.easing-ease-in:before {
+  content: "\e603";
+}
+.easing-ease-in-out:before {
+  content: "\e604";
+}
+
+
+bezier-curve-editor {
+  position: absolute;
+  display: block;
+  width: auto !important;
+  padding: 0;
+  margin-left: 0 !important;
+  background: @app-background-color !important;
+  -webkit-filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.07));
+  padding: 5px;
+  z-index: 2;
+
+  .block {
+    // clear for top-margin on the select element
+    padding: 1px 0 0 0;
+    clear: both;
+  }
+
+  select.form-control {
+    width: 100%;
+    margin: 4px 0 0;
+    background: @input-background-color;
+    border: 1px solid @input-border-color;
+    color: @text-color;
+    font-family: @font-family;
+  }
+
+  .btn {
+    font-family: 'Lucida Grande', 'Segoe UI', sans-serif;
+  }
+
+  .btn-group {
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .btn-icon {
+      height: 28px;
+      padding: 3px 0 0;
+    }
+  }
+
+  bezier-curve {
+    position: relative;
+    display: block;
+  }
+
+  bezier-curve-timing {
+    display: block;
+    margin: 0 4px;
+
+    .bezier-timing-ramp {
+      background: @base-background-color;
+      border: 1px solid @base-border-color;
+      height: 8px;
+      box-sizing: border-box;
+
+      .bezier-timing-dummy {
+        height: 100%;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 10%;
+          height: 100%;
+          background: red;
+        }
+      }
+
+    }
+  }
+
+  .patterns {
+    display: block;
+    margin: 4px;
+    overflow: hidden;
+    .btn-icon {
+      width: 20%;
+
+      & + .btn-icon {
+        width: -webkit-calc(~'20% + 1px');
+      }
+
+      i {
+        font-size: 20px;
+        font-weight: bold;
+        color: red;
+        border: 1px solid @text-color-subtle;
+      }
+    }
+  }
+
+  .actions {
+    display: block;
+    position: relative;
+    z-index: 2;
+    .btn {
+      width: 50%;
+    }
+  }
+
+  bezier-curve-control {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: block;
+    -webkit-transform: translate(-50%, -50%);
+    background: @text-color-highlight;
+    border-radius: 50%;
+    z-index: 3;
+    cursor: -webkit-grab;
+
+    &:active {
+      cursor: -webkit-grabbing;
+    }
+  }
+
+  canvas {
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+}

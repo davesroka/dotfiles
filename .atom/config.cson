@@ -1,0 +1,47 @@
+"*":
+  "MavensMate-Atom":
+    mm_panel_height: 223
+  "atom-beautify":
+    apex:
+      configPath: "/Users/davesroka/.uncrustify/default.cfg"
+    general:
+      _analyticsUserId: "24675e96-2712-4e48-ae9c-bb091bf916a1"
+      beautifyOnSave: true
+    java:
+      beautify_on_save: true
+      configPath: "/Users/davesroka/.uncrustify/default.cfg"
+    js:
+      indent_size: 2
+    jsx:
+      indent_size: 2
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+  core:
+    disabledPackages: [
+      "activate-power-mode"
+    ]
+    themes: [
+      "one-dark-ui"
+      "cake-syntax"
+    ]
+  editor:
+    fontFamily: "Consolas"
+    fontSize: 12
+    invisibles: {}
+    lineHeight: 1.4
+    tabLength: 4
+  "exception-reporting":
+    userId: "b32bf890-5084-6352-7685-e716ca61d62f"
+  linter: {}
+  "linter-stylelint":
+    disableWhenNoConfig: true
+  "one-dark-ui":
+    fontSize: 10
+    layoutMode: "Compact"
+  react: {}
+  "seti-syntax": {}
+  "seti-ui":
+    compactView: true
+    themeColor: "Green"
+  welcome:
+    showOnStartup: false

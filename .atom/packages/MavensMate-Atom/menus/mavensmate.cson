@@ -1,0 +1,138 @@
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'MavensMate'
+      'submenu': [
+        { 'label': 'Delete From Server', 'command': 'mavensmate:delete-file-from-server' }
+        { 'label': 'Refresh From Server', 'command': 'mavensmate:refresh-file' }
+        { 'label': 'Compile', 'command': 'mavensmate:compile-file' }
+      ]
+    }
+  ]
+  '.tree-view.multi-select .file': [
+    {
+      'label': 'MavensMate'
+      'submenu': [
+        { 'label': 'Delete Files From Server', 'command': 'mavensmate:delete-file-from-server' }
+        { 'label': 'Refresh From Server', 'command': 'mavensmate:refresh-selected-metadata' }
+        { 'label': 'Compile Files', 'command': 'mavensmate:compile-selected-metadata' }
+      ]
+    }
+  ]
+  '.tree-view .directory .header': [
+    {
+      'label': 'MavensMate'
+      'submenu': [
+        { 'label': 'Delete From Server', 'command': 'mavensmate:delete-file-from-server' }
+      ]
+    }
+  ]
+  '.tree-view .file, .atom-pane .item-views': [
+    {
+      'label': 'MavensMate'
+      'submenu': [
+        { 'label': 'Delete Files From Server', 'command': 'mavensmate:delete-file-from-server' }
+        { 'label': 'Refresh From Server', 'command': 'mavensmate:refresh-selected-metadata' }
+        { 'label': 'Compile Files', 'command': 'mavensmate:compile-selected-metadata' }
+      ]
+    }
+  ]
+  '.tree-view:not(.multi-select) .file span[data-name*=".resource"]': [
+    {
+      'label': 'MavensMate'
+      'submenu': [
+        { 'label': 'New Resource Bundle', 'command': 'mavensmate:new-resource-bundle' }
+      ]
+    }
+  ]
+  '.tree-view:not(.multi-select) .directory span[data-path*="resource-bundles"]': [
+    {
+      'label': 'MavensMate'
+      'submenu': [
+        { 'label': 'Deploy Resource Bundle', 'command': 'mavensmate:deploy-resource-bundle' }
+      ]
+    }
+  ]
+'menu': [
+  {
+    'label': 'MavensMate',
+    'submenu': [
+      { 'label': 'Open MavensMate UI', 'command': 'mavensmate:open-mavensmate-ui' },
+      { 'label': 'Open Salesforce Org', 'command': 'mavensmate:open-salesforce-org' },
+      {type: 'separator'},
+      {
+        'label': 'Project'
+        'submenu': [
+          { 'label': 'Open Project...', 'command': 'mavensmate:open-project' }
+          { 'label': 'New Project...', 'command': 'mavensmate:new-project' }
+          { 'label': 'Edit Project...', 'command': 'mavensmate:edit-project' }
+          { 'label': 'Compile Project', 'command': 'mavensmate:compile-project' }
+          { 'label': 'Clean Project', 'command': 'mavensmate:clean-project' }
+        ]
+      }
+      {
+        'label': 'Metadata'
+        'submenu': [
+          { 'label': 'New Apex Class...', 'command': 'mavensmate:new-apex-class' }
+          { 'label': 'New Apex Trigger...', 'command': 'mavensmate:new-apex-trigger' }
+          { 'label': 'New VisualForce Page...', 'command': 'mavensmate:new-visualforce-page' }
+          { 'label': 'New Visualforce Component...', 'command': 'mavensmate:new-visualforce-component' }
+          { 'type' : 'separator' }
+          { 'label': 'Update Project Metadata Index (.org_metadata)', 'command': 'mavensmate:index-metadata' }
+        ]
+      }
+      {
+        'label': 'Lightning'
+        'submenu': [
+          { 'label': 'New Lightning App...', 'command': 'mavensmate:new-lightning-app' }
+          { 'label': 'New Lightning Component...', 'command': 'mavensmate:new-lightning-component' }
+          { 'label': 'New Lightning Event...', 'command': 'mavensmate:new-lightning-event' }
+          { 'label': 'New Lightning Interface...', 'command': 'mavensmate:new-lightning-interface' }
+        ]
+      }
+      {
+        'label': 'Debugging'
+        'submenu': [
+          { 'label': 'Start Logging', 'command': 'mavensmate:start-logging' }
+          { 'label': 'Stop Logging', 'command': 'mavensmate:stop-logging' }
+          { 'label': 'Flush Debug Logs', 'command': 'mavensmate:flush-debug-logs' }
+        ]
+      }
+      {
+        'label': 'Unit Testing'
+        'submenu': [
+          {
+            'label': 'Open Apex Test Runner UI...',
+            'command': 'mavensmate:open-apex-test-runner-ui'
+          }
+          {
+            'label': 'Run Tests For This Apex Class',
+            'command': 'mavensmate:run-tests'
+          }
+        ]
+      }
+      {
+        'label': 'Apex Scripting'
+        'submenu': [
+          {
+            'label': 'Execute Apex UI...',
+            'command': 'mavensmate:execute-apex'
+          }
+        ]
+      }
+      {type: 'separator'}
+      {
+        'label': 'Deploy to Server(s)...',
+        'command': 'mavensmate:deploy-to-server'
+      }
+      {type: 'separator'}
+      {
+        'label': 'Settings'
+        'submenu': [
+          { 'label': 'Global Settings', 'command': 'mavensmate:open-global-settings' }
+          { 'label': 'Plugin Settings', 'command': 'mavensmate:open-plugin-settings' }
+        ]
+      }
+    ]
+  }
+]
